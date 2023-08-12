@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { FormContainer, StyledInput, StyledButton } from './Form.styled';
 
@@ -22,6 +22,7 @@ const ContactForm = ({ addContact }) => {
           name: '',
           number: '',
         }}
+        validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
           addContact({ ...values });
           resetForm();
